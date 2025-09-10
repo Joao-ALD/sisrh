@@ -1,18 +1,12 @@
 <?php
 
+use App\Http\Controllers\CargoController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//rota para a página inicial
+route::get('/', [HomeController::class, 'index'])->name('home.index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//rotas para o recurso "cargo"
+route::get('/cargos', [CargoController::class, 'index'])->name('cargos.index');
+route::get('/cargos/create', [CargoController::class, 'create'])->name('cargos.create');
