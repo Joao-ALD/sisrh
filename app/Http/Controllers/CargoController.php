@@ -13,4 +13,3 @@ class CargoController extends Controller
         return view("cargo.create");
     }
 }
-
