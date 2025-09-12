@@ -9,7 +9,8 @@ class CargoController extends Controller
 {
     public function index()
     {
-        return view("cargo.index");
+        $cargos = Cargo::all();
+        return view("cargo.index", compact("cargos"));
     }
     public function create()
     {
@@ -19,6 +20,22 @@ class CargoController extends Controller
     {
         Cargo::create($request->all());
 
+        return redirect()->route("cargos.index");
+    }
+    
+    public function destroy($id){
+        $cargo = Cargo::findOrFail( $id );
+        $cargo->delete();
+
+        return redirect()->route("cargos.index");
+    }
+
+    public function edit(Cargo $cargo){
+        return view("cargo.edit", compact("cargo"));
+    }
+
+    public function update(Request $request, Cargo $cargo){
+        $cargo->update($request->all());
         return redirect()->route("cargos.index");
     }
 }
