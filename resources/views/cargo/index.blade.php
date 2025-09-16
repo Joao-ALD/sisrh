@@ -19,14 +19,15 @@
             <td>{{ $cargo->id }}</td>
             <td>{{ $cargo->cargo }}</td>
             <td>{{ $cargo->descricao }}</td>
-            <td><a href="{{ route('cargos.edit', $cargo) }}" class="btn btn-warning btn-sm">Editar</a>
-
-            <form class="d-inline" action="{{ route('cargos.destroy', $cargo->id) }}" method="post">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este Cargo ?')">Excluir</button>
-            </form>
-
+            <td class="align-middle">
+                <div class="d-flex gap-2">
+                    <a href="{{ route('cargos.edit', $cargo) }}" class="btn btn-warning btn-sm">Editar</a>
+                    <form class="d-inline" action="{{ route('cargos.destroy', $cargo->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este Cargo ?')">Excluir</button>
+                    </form>
+                </div>
             </td>
         </tr>
         @endforeach

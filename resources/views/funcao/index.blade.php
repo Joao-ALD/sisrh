@@ -19,13 +19,15 @@
             <td>{{ $funcao->id }}</td>
             <td>{{ $funcao->funcao }}</td>
             <td>{{ $funcao->descricao }}</td>
-            <td><a href="{{ route('funcaos.edit', $funcao) }}" class="btn btn-warning btn-sm">Editar</a>
-
-            <form class="d-inline" action="{{ route('funcaos.destroy', $funcao->id) }}" method="post">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este funcao ?')">Excluir</button>
-            </form>
+            <td class="align-middle">
+                <div class="d-flex gap-2">
+                    <a href="{{ route('funcaos.edit', $funcao) }}" class="btn btn-warning btn-sm">Editar</a>
+                    <form class="d-inline" action="{{ route('funcaos.destroy', $funcao->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este funcao ?')">Excluir</button>
+                    </form>
+                </div>
 
             </td>
         </tr>
