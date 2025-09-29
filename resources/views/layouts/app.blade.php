@@ -25,8 +25,9 @@
                             Gerenciamento
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('cargos.index') }}">Cargo</a></li>
-                            <li><a class="dropdown-item" href="{{ route('funcaos.index') }}">Função</a></li>
+                            <li><a class="dropdown-item" href="{{ route('cargos.index') }}">Cargos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('funcaos.index') }}">Funções</a></li>
+                            <li><a class="dropdown-item" href="{{ route('funcionarios.index') }}">Funcionários</a></li>
                         </ul>
                     </li>
                 </ul>
