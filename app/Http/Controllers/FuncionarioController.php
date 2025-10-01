@@ -27,8 +27,7 @@ class FuncionarioController extends Controller
     public function store(Request $request)
     {
         $request->validate(['foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',]);
-
-        $data = $request->except('foto');
+        $data = $request->except('foto');   
         
         if ($request->hasFile('foto')) {
             $path = $request->file('foto')->store('uploads', 'public');
@@ -36,7 +35,6 @@ class FuncionarioController extends Controller
         }
         
         Funcionario::create($data);
-
         // Redirecionamento para a lista de funcionarios com uma mensagem de sucesso
         return redirect()->route("funcionarios.index")->with('success', "Funcionário cadastrado com sucesso");
     }

@@ -40,11 +40,17 @@ route::get('/funcao/{funcao}/edit', [FuncaoController::class,'edit'])->name('fun
 // Rota para atualizar um funcao no banco de dados 
 route::put('/funcao/{funcao}', [FuncaoController::class,'update'])->name('funcaos.update');
 
-//? Rotas para FUNCIONARIO
+//? Rotas para o recurso "funcionario"
 
 // rota para o index de "funcionario"
-route::get('/funcinarios', [FuncionarioController::class,'index'])->name('funcionarios.index');
+route::get('/funcionarios', [FuncionarioController::class,'index'])->name('funcionarios.index');
 // rota para criar um novo registro de "funcionario"
-route::get('/funcinarios/create', [FuncionarioController::class,'create'])->name('funcionarios.create');
+route::get('/funcionarios/create', [FuncionarioController::class,'create'])->name('funcionarios.create');
 // rota para salvar um novo "funcionario"
-route::post('/funcinarios', [FuncionarioController::class,'store'])->name('funcionarios.store');
+route::post('/funcionarios', [FuncionarioController::class,'store'])->name('funcionarios.store');
+// rota para editar um "funcionario"
+route::get('/funcionarios/{funcionario}/edit', [FuncionarioController::class,'edit'])->name('funcionarios.edit');
+// rota para atualizar um "funcionario"
+route::put('/funcionarios/{funcionario}', [FuncionarioController::class,'update'])->name('funcionarios.update');
+// rota para deletar um "funcionario"
+route::delete('/funcionarios/{funcionario}', [FuncionarioController::class,'destroy'])->name('funcionarios.destroy');
