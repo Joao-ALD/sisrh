@@ -6,7 +6,7 @@
 
 <div class="card">
     <dic class="card-body">
-        <form action="{{ route('cargos.update', $cargo) }}" method="post">
+        <form action="{{ route('cargos.update', $cargo) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT') <!--o laravel EXIGE o método PUT PARA ALTERAÇÕES  -->
 
