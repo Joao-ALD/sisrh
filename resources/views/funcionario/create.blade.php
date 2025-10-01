@@ -30,7 +30,7 @@
             </div>
             <div class="mb-3">
                 <label for="">Função</label>
-                <select class="form-select" name="cargo_id" required>
+                <select class="form-select" name="funcao_id" required>
                     @foreach($funcaos as $funcao)
                     <option value="{{ $funcao->id }}">{{ $funcao->funcao }}</option>
                     @endforeach

@@ -11,7 +11,9 @@ class FuncionarioController extends Controller
 {
     public function index()
     {
-        return view("funcionario.index");
+        $funcionarios = Funcionario::with(['cargo', 'funcao'])->get();
+        
+        return view("funcionario.index", compact("funcionarios"));
     }
 
     public function create()
